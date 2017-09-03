@@ -1,0 +1,29 @@
+body {text-align: left}
+h1 {font-size:24px}
+h3 {font: 20px lighter; text-align: center}
+pre {font-size:14px}
+a:hover {text-decoration:none}
+a {line-height: 1.9 }
+.input-button{
+font-size: 14px;
+text-align: center;
+border:1px solid transparent;
+-moz-border-radius:  5px; /* Firefox */
+-webkit-border-radius:  5px; /* Safari 4 */
+border-radius:  5px; /* IE 9, Safari 5, Chrome */
+margin:0px auto;
+padding:10px;
+}
+form {margin: 8px}
+navig{max-width: 640px;
+margin:10px; 
+height:70px; 
+display: block inline; 
+text-align:center;
+    padding: 5em;}
+main{max-width: 640px; 
+    padding: 5px;
+}
+img{float:none}
+
+
