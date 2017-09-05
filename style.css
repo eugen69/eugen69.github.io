@@ -1,8 +1,12 @@
 h3 {font: 20px lighter;}
 a:hover {text-decoration:none}
-a {line-height: 1.9 }
+a {line-height: 1.3;
+margin-left:10px;
+margin-right:10px 
+font-size:100%}
+
 .input-button{
-font-size: 14px;
+font-size: 16px;
 text-align: center;
 border:1px solid transparent;
 -moz-border-radius:  5px; /* Firefox */
@@ -10,7 +14,10 @@ border:1px solid transparent;
 border-radius:  5px; /* IE 9, Safari 5, Chrome */
 margin:0px auto;
 padding:10px;
-}
+cursor:pointer;}
+
+.navigation {font-size: 100%;
+text-align: center;}
 
 
 
