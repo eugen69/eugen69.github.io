@@ -1,6 +1,6 @@
  
-body {text-align:center;}
-h3 {font: 18px lighter;min-width: 320px;}
+body {text-align:center; font-family: Impact, Times New Roman, Verdana;}
+h3 {font: 18px lighter;min-width: 320px; font-family: Impact, Times New Roman, Verdana;}
 a:hover {text-decoration:none}
 a {line-height: 1.3;margin-left:10px;margin-right:10px ;font-size:100%}
 img { clear:both;
@@ -23,7 +23,7 @@ margin:0px auto;
 padding:10px;
 cursor:pointer;}
 
-.main {font-family: Times New Roman, Verdana;
+.main {font-family: Noto Sans, Times New Roman, Verdana;
 font-size:18px;}
 
 
