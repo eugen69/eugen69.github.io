@@ -1,17 +1,18 @@
 
-body {text-align:center; font-family:Impact, Times New Roman, Verdana;}
-h3 {font: 18px lighter; font-family: Impact, Times New Roman, Verdana;}
+body {text-align:center; font-family:Verdana;}
+h3 {font: 22px lighter;font-family: Verdana;}
+h4 {font: 18px lighter; font-family: Verdana;}
 a:hover {text-decoration:none}
-a {line-height: 1.3; margin-left:10px;margin-right:10px ; font-size:18px}
+a {line-height: 1.3; margin-left:10px;margin-right:10px ; font-size:18px;  font-family: Verdana;}
 img { clear:both; 
 width:120px;height:120px;}
 
-.navigation {font-size: 100%;
+.navigation {font-size: 18px;  font-family: Verdana;
 text-align: center;
 clear:both; padding: 5px;}
 
-.input-button{
-font-size: 16px;
+.input-button{  font-family: Verdana;
+font-size: 18px;
 text-align: center;
 border:1px solid transparent;
 -moz-border-radius:  5px; /* Firefox */
@@ -21,7 +22,7 @@ margin:0px auto;
 padding:10px;
 cursor:pointer;}
 
-.main {font-family: Noto Sans, Times New Roman, Verdana;
+.main {font-family:Verdana;
 font-size:18px;}
 
 
