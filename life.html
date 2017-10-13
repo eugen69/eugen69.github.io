@@ -6,7 +6,8 @@
 <meta name="viewport" content="width=device-width">
 <META name="description" CONTENT="Game Life">
 <META name="keywords" CONTENT="application, life">
-<link rel="stylesheet" href="life.css" type="text/css">
+<link rel="stylesheet" media="screen and (min-width: 701px)" href="bigstyle.css" type="text/css">
+<link rel="stylesheet" media="screen and (max-width:700px)" href="smallstyle.css" type="text/css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 
 <script>
@@ -56,11 +57,16 @@ document.getElementById(idc).style.backgroundColor = "green";}
 </head>
 
 <body>
+<h3>Game of Life</h3>
+<div class="navigation">
+<a href="index.html"> Bookkeeper</a>   |   <a href="cat.html"> Cat - count real cats </a> |   <a href="contactus.html" > Contact us </a>
+</div>
+
 <div class="human">
 <form name="Fill">
   <p>Choose field: </p>
 <select name="selectField" id="selectField" size="4" multiple>
-    <option value="30" selected>30*30</option>
+    <option value="30" selected>30*30(for Mobiles)</option>
     <option value="50">50*50</option>
     <option value="100">100*100</option>
     <option value="150100">150*100</option>
