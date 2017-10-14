@@ -25,18 +25,10 @@ padding:10px;
 cursor:pointer;}
 
 .main { font-family:Verdana;
-font-size:18px;}
+font-size:18px;
+margin: 5px;}
 
-.human { 
-    width: 300px; 
-    padding: 5px;
-    margin: 20px auto;
-    
-   }
-.field{
-     margin-left: 20%; 
-     margin-right: 20%; 
-}
+
 
 
 

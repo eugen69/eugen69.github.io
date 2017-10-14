@@ -13,15 +13,8 @@
 <script>
  <!--
 //<![CDATA[
-function makeEmptyTable() {
-if (document.getElementById("field").innerHTML=="")//если таблицы еще нет в div field
-{
-var width, height;
-var selected= document.getElementById('selectField').value;
-    if (selected==150100) {
-    width=150;   height=100;
-   } else {width=selected; 
-           height=selected;}
+function make(width, height) {
+document.getElementById("field").innerHTML="";
 var table = document.createElement("table");
 table.setAttribute("border", "1");
 table.setAttribute("rules", "all");
@@ -34,27 +27,21 @@ table.addEventListener("click", onClickCell,false);
             cell.width="7";
             cell.height="7";
             cell["id"]="".concat(i,j);
-
-        }
-       
+        }     
     }
-    document.getElementById("field").appendChild(table);
-}
+document.getElementById("field").appendChild(table);
 }
 
 
 function onClickCell(event){
 if (!event) event = window.event;
 var idc=event.target.id;
-if (document.getElementById(idc).style.backgroundColor==="green")
+if (document.getElementById(idc).style.backgroundColor==="#09ab3f")
 {document.getElementById(idc).style.backgroundColor="white";}
 else {
-document.getElementById(idc).style.backgroundColor = "green";}
+document.getElementById(idc).style.backgroundColor = "#09ab3f";}
 }
 
-function onClickClean(){
-document.getElementById("field").innerHTML="";
-}
 
 //]]>
 
@@ -62,26 +49,24 @@ document.getElementById("field").innerHTML="";
 </head>
 
 <body>
-<h3>Game of Life</h3>
+<h3>Game of Life. Not ready yet... Making</h3>
 <div class="navigation">
 <a href="index.html"> Bookkeeper</a>   |   <a href="cat.html"> Cat - count real cats </a> |   <a href="contactus.html" > Contact us </a>
 </div>
 
-<div class="human">
-<form name="Fill">
-  <p>Choose field: </p>
-<select name="selectField" id="selectField" size="4">
-    <option value="30" selected>30*30 (for Mobiles)</option>
-    <option value="50">50*50</option>
-    <option value="100">100*100</option>
-    <option value="150100">150*100</option>
-   </select>
-  <p><input type="button" value="OK" onClick="makeEmptyTable();">
-   <input type="button" value="Clean" onClick="onClickClean();"></p>
- </form>
+<div class="main" align="center">
+  Field size:<br>
+<input type="button" value="30*30 (for Mobiles)" onClick="make(30,30);">
+<input type="button" value="50*50" onClick="make(50,50);">
+<input type="button" value="100*100" onClick="make(100,100);">
+<input type="button" value="140*100" onClick="make(140,100);"><br>
+</div>
+<div id="field" align="center"><script> make(30,30);</script></div>
+<div class="main" align="center">
+<p>Put beings in field. Double click remove them. 
+If you want to clean all the field click on field dimension.</p>
 </div>
 
-<div id="field" align="center"></div>
 
 
 
