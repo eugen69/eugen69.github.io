@@ -9,43 +9,7 @@
 <link rel="stylesheet" media="screen and (min-width: 701px)" href="bigstyle.css" type="text/css">
 <link rel="stylesheet" media="screen and (max-width:700px)" href="smallstyle.css" type="text/css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
-<script>
- <!--
-//<![CDATA[
-function make(width, height) {
-document.getElementById("field").innerHTML="";
-var table = document.createElement("table");
-table.setAttribute("border", "1");
-table.setAttribute("rules", "all");
-table.setAttribute("id", "tab");
-table.addEventListener("click", onClickCell,false);
-    for(var i = 0; i < height ; i++) {
-        var row = table.insertRow(i);
-        for (var j = 0; j < width; j++){
-            var cell = row.insertCell(j);
-            cell.width="7";
-            cell.height="7";
-            cell["id"]="".concat(i,j);
-        }     
-    }
-document.getElementById("field").appendChild(table);
-}
-
-
-function onClickCell(event){
-if (!event) event = window.event;
-var idc=event.target.id;
-if (document.getElementById(idc).style.backgroundColor==="#09ab3f")
-{document.getElementById(idc).style.backgroundColor="white";}
-else {
-document.getElementById(idc).style.backgroundColor = "#09ab3f";}
-}
-
-
-//]]>
-
-    </script>
+<script src="life.js"></script>
 </head>
 
 <body>
@@ -61,10 +25,10 @@ document.getElementById(idc).style.backgroundColor = "#09ab3f";}
 <input type="button" value="100*100" onClick="make(100,100);">
 <input type="button" value="140*100" onClick="make(140,100);"><br>
 </div>
-<div id="field" align="center"><script> make(30,30);</script></div>
+<div id="divField" align="center" margin="5px" ><script> make(30,30);</script></div>
 <div class="main" align="center">
-<p>Put beings in field. Double click remove them. 
-If you want to clean all the field click on field dimension.</p>
+<input type="button" value="Play" onClick="live();">
+<p>Put beings in field. If you want to clean all the field click on field size. And play step by step!</p>
 </div>
 
 
