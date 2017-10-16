@@ -23,7 +23,7 @@ border:1px solid transparent;
 -moz-border-radius:  5px; /* Firefox */
 -webkit-border-radius:  5px; /* Safari 4 */
 border-radius:  5px; /* IE 9, Safari 5, Chrome */
-margin:0px auto;
+margin:5px auto;
 padding:10px;
 cursor:pointer;}
 
@@ -31,4 +31,20 @@ cursor:pointer;}
 font-family:Verdana;
 font-size:18px;
 margin: 5px;
+}
+
+.text{
+    border: 1px solid #09ab3f;
+    border-radius:  15px;
+    -moz-border-radius:  15px; /* Firefox */
+-webkit-border-radius:  15px; /* Safari 4 */
+    text-align:justify;
+    width:700px;
+    font-family:Verdana;
+font-size:14px;
+padding: 5px;
+}
+
+p{
+    text-indent: 30px;
 }

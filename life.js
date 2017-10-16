@@ -1,5 +1,22 @@
 var wGlob, hGlob;
 var allFields=new Array();
+var timerId;
+
+function getFieldSize(){
+ if (timerId!=null){
+  clean(); 
+ }
+ var size=document.getElementById("fieldSizeRange").value;
+ make(size, size);
+}
+
+function clean(){
+ clearInterval(timerId);
+ timerId=null;
+ allFields=null;
+ document.getElementById("divField").innerHTML="";
+ document.getElementById("play").value="Play";
+}
 
 function make(width, height) {//height-y, width-x
 wGlob=width;
@@ -30,20 +47,34 @@ function onClickCell(event){
 else { document.getElementById(cellid).style.backgroundColor = "#09ab3f";}
 }
 
-
- function live() {
-getFieldFromUser();
-step();
-render();
+function playPause(){
+ if (document.getElementById("play").value=="Pause"){
+ clearInterval(timerId);
+ timerId=null;
+ document.getElementById("play").value="Play"; 
+ } else {
+  var isFilled=isFilledByUser();
+  if (isFilled) {
+   timerId=setInterval(live, 700);
+   document.getElementById("play").value="Pause";
+  }
+ }
 }
 
-function getFieldFromUser() {//+
+ function live() {
+step();
+renderLast();
+}
+
+function isFilledByUser() {
 var matrix=[];
+var notEmpty=false;
 for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
             matrix[i]=[];
             for (j=0; j < document.getElementById("currentTab").rows[i].cells.length; j++) {
                    if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor==="rgb(9, 171, 63)")    {
      matrix[i][j]=true;
+     notEmpty=true;
      }
     else {
      matrix[i][j]=false;//y x
@@ -51,9 +82,10 @@ for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
             }
         }
         allFields.push(matrix);
+        return notEmpty;
  }
 
-function render() {
+function renderLast() {
        for (i=0; i<hGlob;i++){
            for (j=0;j<wGlob;j++){
              if (allFields[allFields.length-1][i][j]) {
@@ -65,13 +97,13 @@ function render() {
        }  
 }
 
-function step() {//+
+function step() {
  var newField=[];
          for (h = 0; h < hGlob; h++) {
             newField[h]=[];
             for (w = 0; w < wGlob; w++) {
                  var n=countN(h,w);
-                 if (n == 3) {// from here
+                 if (n == 3) {
                  newField[h][w] = true;
                  } else if (n == 2 && allFields[allFields.length-1][h][w]) {
                   newField[h][w] = true;
@@ -83,7 +115,7 @@ function step() {//+
         allFields.push(newField);
  }
 
- function countN(y, x) {//+
+ function countN(y, x) {
         var up = (y == 0) ? hGlob - 1 : y - 1;
         var down = (y == hGlob - 1) ? 0 : y + 1;
         var left = (x == 0) ? wGlob - 1 : x - 1;
@@ -99,6 +131,10 @@ function step() {//+
         if (allFields[f][down][x]) {count++;}
         if (allFields[f][down][right]) { count++;}
         return count;
+}
+
+function infiniteFieldCountN(y,x){
+        
 }
 
 
