@@ -4,8 +4,8 @@
 <meta charset="UTF-8"/>
 <title>Game of Life</title>
 <meta name="viewport" content="width=device-width">
-<META name="description" CONTENT="Game Life">
-<META name="keywords" CONTENT="application, life">
+<META name="description" CONTENT="Game of Life zero-player game">
+<META name="keywords" CONTENT="application, life, Conway's game, JavaScript">
 <link rel="stylesheet" media="screen and (min-width: 701px)" href="bigstyle.css" type="text/css">
 <link rel="stylesheet" media="screen and (max-width: 700px)" href="smallstyle.css" type="text/css">
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
@@ -18,25 +18,40 @@
 </div>
 <h3>Game of Life</h3>
 <div class="main" align="center">
-  <p>Put beings in field. Click to a being if you want to remove it. And play!</p>
-  <p>Field size: <input type="range" min="30" step="1" value="30" id="fieldSizeRange" oninput="getFieldSize();" ></p>
-  <script>
+  <p>Locate beings on the field. Click to a being if you want to remove it. And play!</p>
+  <div id="ranges">
+    <div id="size" style="font-size:14px; display:inline">Sizing</div>
+    <input type="range" title="Field size" min="25" step="1" value="25" id="sizeRange" oninput="changeSize();">
+	 <script>
     var bW=document.body.clientWidth;
-    var m=Math.floor(bW/11);
-    document.getElementById("fieldSizeRange").max=m;
-    document.getElementById("fieldSizeRange").value=30;
-    </script>
-<div id="divField" align="center" margin="5px" ><script> getFieldSize();</script></div>
-<div class="main" align="center">  
-<input type="button" id="play" value="Play" onClick="playPause();">
-
-<div style="text-align:justify; width:60%; font-size:14px; padding: 5px">
-  <p>Game of life is a John Horton Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:<br>
-- any being (it doesn't matters live or dead) will be live if it has 3 live neighbours.<br>
-- any live being with two live neighbours lives on to the next generation.<br>
-- any other cells are dead in next step.</p>
+    var m=Math.floor(bW/12);
+    if (m<25) {
+     document.getElementById("sizeRange").style.display="none";
+     document.getElementById("size").style.display="none";
+    } else {
+     document.getElementById("sizeRange").max=m;
+     document.getElementById("sizeRange").value=25;
+    }
+   </script>
+  <div style="font-size:14px;margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="18" step="2" value="2" id="speedRange" oninput="changeSpeed();"></div>
+  </div>
+  
+<div id="divField" align="center">
+  <script>
+    var d=document.getElementById("sizeRange").value;
+    displayEmptyTable(d,d);
+  </script>
 </div>
-
+ <div class="buttons">
+  <input type="button" id="playPauseButton" value="Play" onClick="playPause(false);">
+  <input type="button" id="cleanButton" value="Clean" onClick="clean();">
+ </div>
+<div style="text-align:justify; width:60%; font-size:14px; padding: 5px">
+  <p>Game of life is a Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:<br>
+- any being (it doesn't matter live or dead) will be live if it has 3 live neighbours.<br>
+- any live being with two live neighbours lives on to the next generation.<br>
+- any other cells become dead.</p>
+</div>
 </div>
  
  <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46157997 = new Ya.Metrika({ id:46157997, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46157997" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
