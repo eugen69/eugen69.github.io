@@ -6,17 +6,11 @@ var liveColor="rgb(9, 171, 63)";
 var deadColor="rgb(255, 255, 255)";
 
 function changeSize(){
- //if (timerId!=null){
-  //clean();  }
+ if (timerId!=null){
+  clean();  }
    var newSize=document.getElementById("sizeRange").value;
-   var isAlive=isAnybodyLiveHere();
-   if (isAlive) {
-    makeArrayFromTable();
     displayEmptyTable(newSize, newSize);
-    renderLast();
-   } else {
-    displayEmptyTable(newSize, newSize);
-   }
+  
 }
 
 function changeSpeed(){
