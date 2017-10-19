@@ -28,17 +28,6 @@ cursor:pointer;}
 font-size:18px;
 margin: 5px;}
 
-.text{
-    border: 1px solid #09ab3f;
-    border-radius:  15px;
-    -moz-border-radius:  5px; /* Firefox */
--webkit-border-radius:  5px; /* Safari 4 */
-    text-align:justify;
-    font-family:Verdana;
-font-size:14px;
-padding: 5px;
-}
-
 p{
     text-indent: 30px;
 }
