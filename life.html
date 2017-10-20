@@ -25,7 +25,7 @@
 	 <script>
     var bW=document.body.clientWidth;
     var m=Math.floor(bW/12);
-    if (m<25) {
+    if (screen.width<240||m<25) {
      document.getElementById("sizeRange").style.display="none";
      document.getElementById("size").style.display="none";
     } else {
@@ -33,7 +33,7 @@
      document.getElementById("sizeRange").value=25;
     }
    </script>
-  <div style="font-size:14px;margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="18" step="2" value="2" id="speedRange" oninput="changeSpeed();"></div>
+  <div style="font-size:14px;margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="30" step="2" value="2" id="speedRange" oninput="changeSpeed();"></div>
   </div>
   
 <div id="divField" align="center">

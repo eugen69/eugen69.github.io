@@ -4,18 +4,17 @@ var millisecond=1000;
 var cellSize=8;
 var liveColor="rgb(9, 171, 63)";
 var deadColor="rgb(255, 255, 255)";
+var allSteps=[];
 
 function changeSize(){
- if (timerId!=null){
-  clean();  }
-   var newSize=document.getElementById("sizeRange").value;
+    readCurrentGFromTableToArray();
+    var newSize=document.getElementById("sizeRange").value;
     displayEmptyTable(newSize, newSize);
-  
+    paintNextGFromArrayToTable(); 
 }
 
 function changeSpeed(){
- var level=document.getElementById("speedRange").value;
- millisecond=Math.floor(2000/level);
+ millisecond=Math.floor(2000/document.getElementById("speedRange").value);
  if (document.getElementById("playPauseButton").value=="Pause"){
   clearInterval(timerId); //if game already plays
  timerId=null;
@@ -24,8 +23,6 @@ function changeSpeed(){
 }
 
 function displayEmptyTable(width, height) {
- //if (timerId!=null){
- // clean();  }
  document.getElementById("divField").innerHTML="";
  wGlob=width;
  hGlob=height;
@@ -59,6 +56,7 @@ else {
 
 function playPause(speedChange){
  if (document.getElementById("playPauseButton").value=="Play"||speedChange){
+  millisecond=Math.floor(2000/document.getElementById("speedRange").value);
   timerId=setInterval(step, millisecond);
   document.getElementById("playPauseButton").value="Pause";
  } else {
@@ -72,10 +70,17 @@ function step() {
  readCurrentGFromTableToArray();
  var isLive=isLiveNextG();
    if (isLive) {
-  makeNextG();
-  paintNextGFromArrayToTable();
+  var isEqual=makeNextG();
+  if (isEqual) {
+   document.getElementById("playPauseButton").value="Play";
+   alert ('Game is over. Steps repeat each over');
+   clearInterval(timerId);
+   timerId=null;
   } else {
-   alert ('No live beings');
+   paintNextGFromArrayToTable();
+  }
+   } else {
+   alert ('Game is over. No live beings');
    clean();
   }
 }
@@ -143,8 +148,24 @@ function makeNextG() {
                   }
             }
         }
+        var isEqualSteps=compare(fieldArray,newField);
+        allSteps.push(fieldArray);
         fieldArray=copy(newField);
         newField=null;
+        return isEqualSteps;
+ }
+ 
+ function compare(array1,array2){
+  if (array1.length==array2.length){
+   for (h = 0; h < hGlob; h++) {
+            for (w = 0; w < wGlob; w++) {
+             if (array1[h][w]!=array2[h][w]){
+              return false;
+             }
+            }
+           }
+  }
+  return true;
  }
 
 function copy(previousArray){
@@ -173,4 +194,4 @@ function countNeighbours(y, x) {
         if (fieldArray[down][x]) {count++;}
         if (fieldArray[down][right]) { count++;}
         return count;
-}  
+}
