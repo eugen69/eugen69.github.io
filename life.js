@@ -5,21 +5,25 @@ var cellSize=8;
 var liveColor="rgb(9, 171, 63)";
 var deadColor="rgb(255, 255, 255)";
 var allSteps=[];
+var acorn=[[false,true,false,false,false,false,false],[false,false,false,true, false,false,false],[true,true, false,false,true,true,true]];
+var glider=[[false,false,false,true, false,false,false],[false,false,false,false, true, false,false],[false,false,true,true,true,false,false]];
+var r=[[false,false,false,true,true,false,false],[false,false,true,true,false,false,false],[false,false,false,true, false,false,false]];
 
 function changeSize(){
-    readCurrentGFromTableToArray();
+    pauseGame();// add last table to array
     var newSize=document.getElementById("sizeRange").value;
+    var difference=newSize-wGlob;
     displayEmptyTable(newSize, newSize);
-    paintNextGFromArrayToTable(); 
+    paintNextGFromArrayToTable(difference);
+    if (document.getElementById("playPauseButton").value=="Pause"){
+     startGame();}
 }
 
 function changeSpeed(){
+ pauseGame();
  millisecond=Math.floor(2000/document.getElementById("speedRange").value);
- if (document.getElementById("playPauseButton").value=="Pause"){
-  clearInterval(timerId); //if game already plays
- timerId=null;
- playPause(true);
- }
+   if (document.getElementById("playPauseButton").value=="Pause"){
+ startGame();}
 }
 
 function displayEmptyTable(width, height) {
@@ -37,7 +41,7 @@ function displayEmptyTable(width, height) {
             var cell = row.insertCell(j);
             cell.width=cellSize;
             cell.height=cellSize;
-            cell.id="".concat(j,i);//x y
+            cell.id="".concat(j,' ',i);//x y
         }     
     }
 document.getElementById("divField").appendChild(emptyTable);
@@ -46,7 +50,7 @@ document.getElementById("divField").appendChild(emptyTable);
 function onClickCell(event){
   if (!event) event = window.event;
   var cellid=event.target.id;
-  if (document.getElementById(cellid).style.backgroundColor===liveColor)
+  if (document.getElementById(cellid).style.backgroundColor==liveColor)
    {
     document.getElementById(cellid).style.backgroundColor=deadColor;
     }
@@ -54,16 +58,45 @@ else {
  document.getElementById(cellid).style.backgroundColor = liveColor;}
 }
 
-function playPause(speedChange){
- if (document.getElementById("playPauseButton").value=="Play"||speedChange){
+function playPause(){
+ if (document.getElementById("playPauseButton").value=="Play"){
+   startGame();
+   document.getElementById("playPauseButton").value="Pause";
+ } else {
+  pauseGame();
+  document.getElementById("playPauseButton").value="Play";
+}
+}
+
+function startGame(){
   millisecond=Math.floor(2000/document.getElementById("speedRange").value);
   timerId=setInterval(step, millisecond);
-  document.getElementById("playPauseButton").value="Pause";
- } else {
+}
+
+function pauseGame(){
+ readCurrentGFromTableToArray();
  clearInterval(timerId);
  timerId=null;
- document.getElementById("playPauseButton").value="Play";
 }
+
+function preset(name){
+ clean();
+ var h=Math.floor(hGlob/2)-3;
+   if (name=="acorn"){
+    printPreset(acorn, h);
+   } else if (name=="glider") {
+    printPreset(glider,h);
+   }  else if (name=="r") {
+    printPreset(r,h);
+    }
+ 
+}
+
+function printPreset(array, place){
+ for (i=0; i<3; i++){
+     for(j=0;j<7;j++){
+       if(array[i][j]){
+          document.getElementById("currentTab").rows[i+place].cells[j+place].style.backgroundColor=liveColor;    }}}
 }
 
 function step() {
@@ -73,14 +106,14 @@ function step() {
   var isEqual=makeNextG();
   if (isEqual) {
    document.getElementById("playPauseButton").value="Play";
-   alert ('Game is over. Steps repeat each over');
+   alert ('Game over. Steps repeat each over');
    clearInterval(timerId);
    timerId=null;
   } else {
-   paintNextGFromArrayToTable();
+   paintNextGFromArrayToTable(0);
   }
    } else {
-   alert ('Game is over. No live beings');
+   alert ('Game over. No live beings');
    clean();
   }
 }
@@ -118,17 +151,25 @@ function isLiveNextG(){
 	 }
   return false;
 	 }
-  
-function paintNextGFromArrayToTable() {
-       for (i=0; i<hGlob; i++){
-           for (j=0; j<wGlob; j++){
-             if (fieldArray[i][j]) {
+   
+function paintNextGFromArrayToTable(difference) {
+  var left=Math.floor(difference/2);
+  var right=difference-left;
+  var start=0;
+  var fin=hGlob;
+  if (difference>0){
+   start=left;
+   fin=hGlob-right;
+  }
+    for (i=start; i<fin; i++){
+           for (j=start; j<fin; j++){
+             if (fieldArray[i-left][j-left]) {
               document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor=liveColor;
              } else {
               document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor=deadColor;
              }
            }
-       }
+       }       
 }
 
 function makeNextG() {
