@@ -14,7 +14,7 @@ text-align: center;
 clear:both; padding: 5px;}
 
 .input-button{ font-family:Verdana;
-font-size: 18px;
+font-size: 14px;
 text-align: center;
 border:1px solid transparent;
 -moz-border-radius:  5px; /* Firefox */
@@ -28,11 +28,18 @@ cursor:pointer;}
 font-size:14px;
 margin: 5px;}
 
+.manytext{
+    text-align:justify;
+    margin-left: 15%; margin-right: 15%;
+    padding:5px;
+    font-size:14px;
+}
+
 p{
     text-indent: 30px;
-    font-size:14px;
-    padding: 5px;
 }
+
+
 
 .buttons{
     padding: 7px;
