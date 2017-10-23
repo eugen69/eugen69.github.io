@@ -25,11 +25,13 @@ padding:10px;
 cursor:pointer;}
 
 .main { font-family:Verdana;
-font-size:18px;
+font-size:14px;
 margin: 5px;}
 
 p{
     text-indent: 30px;
+    font-size:14px;
+    padding: 5px;
 }
 
 .buttons{
