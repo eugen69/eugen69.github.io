@@ -31,8 +31,8 @@ function displayEmptyTable(width, height) {
  wGlob=width;
  hGlob=height;
  var emptyTable = document.createElement("table");
-  emptyTable.setAttribute("rules", "all");
-  emptyTable.setAttribute("style", "border:1px solid black");
+  emptyTable.setAttribute("rules", "all"); //all
+  emptyTable.setAttribute("style", "border:1px solid #09ab3f");
   emptyTable.setAttribute("id","currentTab");
   emptyTable.addEventListener("click", onClickCell, false);
  for(var i = 0; i < height; i++) {
@@ -104,6 +104,8 @@ function step() {
  var isLive=isLiveNextG();
    if (isLive) {
   var isEqual=makeNextG();
+  var s=allSteps.length;
+  document.getElementById("stepCounter").innerHTML=s;
   if (isEqual) {
    document.getElementById("playPauseButton").value="Play";
    alert ('Game over. Steps repeat each over');
@@ -122,7 +124,9 @@ function clean(){
  clearInterval(timerId);
  timerId=null;
  fieldArray=null;
+ allSteps=[];
  document.getElementById("playPauseButton").value="Play";
+ document.getElementById("stepCounter").innerHTML="0";
  displayEmptyTable(wGlob, hGlob);
 }
 
