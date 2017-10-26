@@ -32,7 +32,7 @@ function displayEmptyTable(width, height) {
  hGlob=height;
  var emptyTable = document.createElement("table");
   emptyTable.setAttribute("rules", "all"); //all
-  emptyTable.setAttribute("style", "border:1px solid #09ab3f");
+  emptyTable.setAttribute("style", "border:1px solid black");
   emptyTable.setAttribute("id","currentTab");
   emptyTable.addEventListener("click", onClickCell, false);
  for(var i = 0; i < height; i++) {
