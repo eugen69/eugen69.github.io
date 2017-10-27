@@ -17,10 +17,9 @@
 <a href="index.html"> Bookkeeper</a>   |   <a href="cat.html"> Cat - count real cats </a> |    <a href="life.html" > Game of Life </a> | <a href="contactus.html" > Contact us </a>
 </div>
 <h3>Game of Life</h3>
-<div class="main">
-  <p>Locate beings on the field. Click to a being if you want to remove it. And play!</p>
+  <p class="manytext">Locate beings on the field. Click to a being if you want to remove it. And play!</p>
   <div id="ranges">
-    <div id="size" style="font-size:14px; display:inline">Sizing</div>
+    <div id="size" style="display:inline">Sizing</div>
     <input type="range" title="Field size" min="25" step="1" value="25" id="sizeRange" oninput="changeSize();">
 	 <script>
     var bW=document.body.clientWidth;
@@ -34,7 +33,7 @@
      document.getElementById("sizeRange").value=25;
     }
    </script>
-  <div style="font-size:14px;margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="44" step="2" value="10" id="speedRange" oninput="changeSpeed();"></div>
+  <div style="margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="44" step="2" value="10" id="speedRange" oninput="changeSpeed();"></div>
   </div>
   
 <div id="divField" align="center">
@@ -42,6 +41,7 @@
     var d=document.getElementById("sizeRange").value;
     displayEmptyTable(d,d);
   </script>
+  <noscript><p>Here should be lokated a table, but JavaScript is blocked in your browser settings. You can allow sites to run JavaScript or game will not launch.</p></noscript> 
 </div>
  <div class="buttons">
   <input type="button" id="playPauseButton" value="Play" onClick="playPause();">
@@ -58,7 +58,6 @@
 - any being (it doesn't matter live or dead) will be live if it has 3 live neighbours.<br>
 - any live being with two live neighbours lives on to the next generation.<br>
 - any other cells become dead.</p>
-</div>
 </div>
  
  <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46157997 = new Ya.Metrika({ id:46157997, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46157997" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
