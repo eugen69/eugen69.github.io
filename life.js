@@ -1,10 +1,12 @@
-var wGlob, hGlob, timerId;
+var wGlob, hGlob, timerId, colorTimerId;
 var fieldArray=[];
 var millisecond=1000;
 var cellSize=8;
 var liveColor="rgb(9, 171, 63)";
 var deadColor="rgb(255, 255, 255)";
 var allSteps=[];
+var rgbA=[104,255,0];
+var grow=true;
 var acorn=[[false,true,false,false,false,false,false],[false,false,false,true, false,false,false],[true,true, false,false,true,true,true]];
 var glider=[[false,false,false,true, false,false,false],[false,false,false,false, true, false,false],[false,false,true,true,true,false,false]];
 var r=[[false,false,false,true,true,false,false],[false,false,true,true,false,false,false],[false,false,false,true, false,false,false]];
@@ -26,6 +28,33 @@ function changeSpeed(){
  startGame();}
 }
 
+function changeColor(){
+ rgbA[0]=20+(Math.floor(Math.random() * 190));
+ colorTimerId=setInterval(multicolored, 200);
+}
+
+function multicolored() {
+ if (rgbA[1]>1){
+  if (grow){
+   rgbA[2]=rgbA[2]+2;
+   if (rgbA[2]>240) {
+    grow=false;
+    rgbA[1]=rgbA[1]-1;
+   }
+  } else {
+   rgbA[2]=rgbA[2]-2;
+   if (rgbA[2]<1) {
+    grow=true;
+    rgbA[1]=rgbA[1]-1;
+   }
+  }
+ } else {
+  rgbA[1]=rgbA[1]+240;
+  }
+ var hue = 'rgb(' + rgbA[0] + ',' + rgbA[1] + ',' + rgbA[2] + ')';
+ liveColor = hue;
+}
+
 function displayEmptyTable(width, height) {
  document.getElementById("divField").innerHTML="";
  wGlob=width;
@@ -42,6 +71,7 @@ function displayEmptyTable(width, height) {
             cell.width=cellSize;
             cell.height=cellSize;
             cell.id="".concat(j,' ',i);//x y
+            cell.style.backgroundColor=deadColor;
         }     
     }
 document.getElementById("divField").appendChild(emptyTable);
@@ -50,18 +80,25 @@ document.getElementById("divField").appendChild(emptyTable);
 function onClickCell(event){
   if (!event) event = window.event;
   var cellid=event.target.id;
-  if (document.getElementById(cellid).style.backgroundColor==liveColor)
+  if (document.getElementById(cellid).style.backgroundColor==deadColor)
    {
-    document.getElementById(cellid).style.backgroundColor=deadColor;
+    document.getElementById(cellid).style.backgroundColor=liveColor;
     }
 else {
- document.getElementById(cellid).style.backgroundColor = liveColor;}
+ document.getElementById(cellid).style.backgroundColor = deadColor;}
 }
 
 function playPause(){
- if (document.getElementById("playPauseButton").value=="Play"){
-   startGame();
-   document.getElementById("playPauseButton").value="Pause";
+   if (document.getElementById("playPauseButton").value=="Play"){
+     if (document.getElementById("multicolor").checked==true){
+      changeColor();
+      } else {
+       clearInterval(colorTimerId);
+       colorTimerId=null;
+       liveColor="rgb(9, 171, 63)";
+       }
+          startGame();
+          document.getElementById("playPauseButton").value="Pause";
  } else {
   pauseGame();
   document.getElementById("playPauseButton").value="Play";
@@ -77,6 +114,8 @@ function pauseGame(){
  readCurrentGFromTableToArray();
  clearInterval(timerId);
  timerId=null;
+ clearInterval(colorTimerId);
+       colorTimerId=null;
 }
 
 function preset(name){
@@ -111,6 +150,8 @@ function step() {
    alert ('Game over. Steps repeat each over');
    clearInterval(timerId);
    timerId=null;
+   clearInterval(colorTimerId);
+   colorTimerId=null;
   } else {
    paintNextGFromArrayToTable(0);
   }
@@ -125,6 +166,11 @@ function clean(){
  timerId=null;
  fieldArray=null;
  allSteps=[];
+ clearInterval(colorTimerId);
+ colorTimerId=null;
+ rgbA=[104,255,0];
+ grow=true;
+ liveColor="rgb(9, 171, 63)";
  document.getElementById("playPauseButton").value="Play";
  document.getElementById("stepCounter").innerHTML="0";
  displayEmptyTable(wGlob, hGlob);
@@ -135,7 +181,7 @@ var matrix=[];
 for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
 			matrix[i]=[];
 			for (j=0; j < document.getElementById("currentTab").rows[i].cells.length; j++) {
-				   if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor==liveColor)    {
+				   if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor!=deadColor)    {
 	 matrix[i][j]=true;
 	 }
 	else {
@@ -149,7 +195,7 @@ for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
 function isLiveNextG(){
  for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
   for (j=0; j < document.getElementById("currentTab").rows[i].cells.length; j++) {
-   if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor===liveColor) {
+   if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor!=deadColor) {
 	 return true;	 } 	 
 	 }
 	 }

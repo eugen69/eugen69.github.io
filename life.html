@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8"/>
+<meta charset="utf-8">
 <title>Game of Life</title>
 <meta name="viewport" content="width=device-width">
-<META name="description" CONTENT="Game of Life zero-player game">
-<META name="keywords" CONTENT="application, life, Conway's game, JavaScript">
+<META name="description" CONTENT="Conway's Game of Life as a browser game. Put your beings on the field and watch how long lasts life of this combination ">
+<META name="keywords" content="life, Conway, JavaScript, game, acorn, glider, r-pentomino, live, cellular, automaton, zero-player game">
 <link rel="stylesheet" media="screen and (min-width: 701px)" href="bigstyle.css" type="text/css">
 <link rel="stylesheet" media="screen and (max-width: 700px)" href="smallstyle.css" type="text/css">
 <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
@@ -44,6 +44,7 @@
   <noscript><p>Here should be lokated a table, but JavaScript is blocked in your browser settings. You can allow sites to run JavaScript or game will not launch.</p></noscript> 
 </div>
  <div class="buttons">
+   <input type="checkbox" id="multicolor" name="multicolor" value="multicolor"><label for="multicolor">Multicolor</label>
   <input type="button" id="playPauseButton" value="Play" onClick="playPause();">
   <input type="button" id="cleanButton" value="Clean" onClick="clean();">
    <div id="stepCounter" width="30px" style="display:inline; margin-left:35px"> 0 </div>
@@ -60,5 +61,5 @@
 - any other cells become dead.</p>
 </div>
  
- <!-- Yandex.Metrika counter --> <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46157997 = new Ya.Metrika({ id:46157997, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46157997" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- /Yandex.Metrika counter -->
+ <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46157997 = new Ya.Metrika({ id:46157997, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46157997" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- Metrik -->
 </body>
