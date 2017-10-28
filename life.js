@@ -18,38 +18,41 @@ function changeSize(){
     displayEmptyTable(newSize, newSize);
     paintNextGFromArrayToTable(difference);
     if (document.getElementById("playPauseButton").value=="Pause"){
-     startGame();}
+     var color=document.getElementById("multicolor").checked;
+     startGame(color);}
 }
 
 function changeSpeed(){
  pauseGame();
  millisecond=Math.floor(2000/document.getElementById("speedRange").value);
    if (document.getElementById("playPauseButton").value=="Pause"){
- startGame();}
+var color=document.getElementById("multicolor").checked;
+     startGame(color); }
 }
 
 function changeColor(){
- rgbA[0]=20+(Math.floor(Math.random() * 190));
- colorTimerId=setInterval(multicolored, 200);
+ rgbA[0]=Math.floor(Math.random() * 200);
+ colorTimerId=setInterval(multicolored, 150);
 }
 
 function multicolored() {
  if (rgbA[1]>1){
   if (grow){
    rgbA[2]=rgbA[2]+2;
-   if (rgbA[2]>240) {
+   if (rgbA[2]>220) {
     grow=false;
-    rgbA[1]=rgbA[1]-1;
+    rgbA[1]=rgbA[1]-3;
    }
   } else {
    rgbA[2]=rgbA[2]-2;
    if (rgbA[2]<1) {
     grow=true;
-    rgbA[1]=rgbA[1]-1;
+    rgbA[1]=rgbA[1]-3;
    }
   }
  } else {
-  rgbA[1]=rgbA[1]+240;
+  rgbA[1]=rgbA[1]+250;
+  rgbA[0]=Math.floor(Math.random() * 200);
   }
  var hue = 'rgb(' + rgbA[0] + ',' + rgbA[1] + ',' + rgbA[2] + ')';
  liveColor = hue;
@@ -89,15 +92,16 @@ else {
 }
 
 function playPause(){
+ var color=false;
    if (document.getElementById("playPauseButton").value=="Play"){
      if (document.getElementById("multicolor").checked==true){
-      changeColor();
+      color=true;
       } else {
        clearInterval(colorTimerId);
        colorTimerId=null;
        liveColor="rgb(9, 171, 63)";
        }
-          startGame();
+          startGame(color);
           document.getElementById("playPauseButton").value="Pause";
  } else {
   pauseGame();
@@ -105,9 +109,12 @@ function playPause(){
 }
 }
 
-function startGame(){
+function startGame(color){
   millisecond=Math.floor(2000/document.getElementById("speedRange").value);
   timerId=setInterval(step, millisecond);
+  if (color) {
+   changeColor();
+}
 }
 
 function pauseGame(){
@@ -115,7 +122,7 @@ function pauseGame(){
  clearInterval(timerId);
  timerId=null;
  clearInterval(colorTimerId);
-       colorTimerId=null;
+ colorTimerId=null;
 }
 
 function preset(name){
