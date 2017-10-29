@@ -38,16 +38,16 @@ function changeColor(){
 function multicolored() {
  if (rgbA[1]>1){
   if (grow){
-   rgbA[2]=rgbA[2]+2;
+   rgbA[2]=rgbA[2]+4;
    if (rgbA[2]>220) {
     grow=false;
-    rgbA[1]=rgbA[1]-3;
+    rgbA[1]=rgbA[1]-6;
    }
   } else {
-   rgbA[2]=rgbA[2]-2;
+   rgbA[2]=rgbA[2]-4;
    if (rgbA[2]<1) {
     grow=true;
-    rgbA[1]=rgbA[1]-3;
+    rgbA[1]=rgbA[1]-6;
    }
   }
  } else {

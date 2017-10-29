@@ -16,7 +16,7 @@
 <div class="navigation">
 <a href="index.html"> Bookkeeper</a>   |   <a href="cat.html"> Cat - count real cats </a> |    <a href="life.html" > Game of Life </a> | <a href="contactus.html" > Contact us </a>
 </div>
-<h3>Game of Life</h3>
+<h1>Game of Life</h1>
   <p class="manytext">Locate beings on the field. Click to a being if you want to remove it. And play!</p>
   <div id="ranges">
     <div id="size" style="display:inline">Sizing</div>
@@ -44,7 +44,7 @@
   <noscript><p>Here should be lokated a table, but JavaScript is blocked in your browser settings. You can allow sites to run JavaScript or game will not launch.</p></noscript> 
 </div>
  <div class="buttons">
-   <input type="checkbox" id="multicolor" name="multicolor" value="multicolor"><label for="multicolor">Multicolor</label>
+   <input type="checkbox" id="multicolor" name="multicolor" value="multicolor" title="Color of beings changes gradually"><label for="multicolor">Multicolor</label>
   <input type="button" id="playPauseButton" value="Play" onClick="playPause();">
   <input type="button" id="cleanButton" value="Clean" onClick="clean();">
    <div id="stepCounter" width="30px" style="display:inline; margin-left:35px"> 0 </div>
@@ -55,10 +55,12 @@
   <input type="button" title="R-pentomino" style="background-image: url(image/rpentomino.png);  background-repeat: no-repeat;cursor:pointer; width: 73px; height:73px" onClick=preset("r");>
  </div>
 <div class="manytext">
-  <p>Game of life is a Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:<br>
-- any being (it doesn't matter live or dead) will be live if it has 3 live neighbours.<br>
-- any live being with two live neighbours lives on to the next generation.<br>
-- any other cells become dead.</p>
+  <p>Game of life is a Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:</p>
+  <ul>
+   <li>any being (it doesn't matter live or dead) will be live if it has 3 live neighbours.</li>
+   <li>any live being with two live neighbours lives on to the next generation.</li>
+   <li>any other cells become dead</li>
+  </ul>
 </div>
  
  <script type="text/javascript" > (function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter46157997 = new Ya.Metrika({ id:46157997, clickmap:true, trackLinks:true, accurateTrackBounce:true }); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = "https://mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks"); </script> <noscript><div><img src="https://mc.yandex.ru/watch/46157997" style="position:absolute; left:-9999px;" alt="" /></div></noscript> <!-- Metrik -->

@@ -4,12 +4,13 @@ font-family: Verdana, serif;
 font-size:14px;
 }
 
-h3 {
+h1 {
 font: 22px lighter;
 }
 
-h4 {font: 18px lighter; 
+h2 {font: 18px lighter; 
 }
+
 a:hover {
 text-decoration:none;
 }
@@ -25,6 +26,12 @@ img {
 clear:both; 
 width:120px;
 height:120px;}
+
+p{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  text-indent: 30px;
+}
 
 .navigation {
 font-size: 18px;  
@@ -48,7 +55,6 @@ cursor:pointer;}
     margin-left: 25%; 
     margin-right: 25%;
     padding:5px;
-    text-indent: 30px;
     }
 
 .buttons{
