@@ -1,7 +1,7 @@
  body {
 text-align:center; 
 font-family: Arial, serif; 
-font-size:12px;
+font-size:14px;
 }
 
 h1 {
@@ -27,7 +27,7 @@ min-width:50px; min-height:50px;}
 p{
   margin-top: 0px;
   margin-bottom: 0px;
-  text-indent: 30px;
+  text-indent: 20px;
 }
 
 .navigation {font-size: 16px;  
@@ -37,20 +37,22 @@ clear:both; padding: 5px;}
 .input-button{
     text-align: center;
 border:1px solid transparent;
--moz-border-radius:  5px; /* Firefox */
 -webkit-border-radius:  5px; /* Safari 4 */
-border-radius:  5px; /* IE 9, Safari 5, Chrome */
+border-radius:  10px; 
 margin:0px auto;
 padding:10px;
-cursor:pointer;}
+cursor:pointer;
+background-color: #c3ffbd;}
 
 .manytext{
     text-align:justify;
-    padding:5px;
-    text-indent: 30px;
+    padding:10px;
+    text-indent: 20px;
     width:inherit;
 }
 
 .buttons{
-    padding: 7px;
+     margin-top: 7px;
+     margin-bottom: 10px;
 }
+

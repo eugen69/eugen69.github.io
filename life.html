@@ -44,15 +44,16 @@
   <noscript><p>Here should be lokated a table, but JavaScript is blocked in your browser settings. You can allow sites to run JavaScript or game will not launch.</p></noscript> 
 </div>
  <div class="buttons">
-   <input type="checkbox" id="multicolor" name="multicolor" value="multicolor" title="Color of beings changes gradually"><label for="multicolor">Multicolor</label>
+   <input type="checkbox" id="multicolor" name="multicolor-field" value="multicolor" title="Color of beings changes gradually">
+   <label for="multicolor">Multicolor</label>
   <input type="button" id="playPauseButton" value="Play" onClick="playPause();">
   <input type="button" id="cleanButton" value="Clean" onClick="clean();">
    <div id="stepCounter" width="30px" style="display:inline; margin-left:35px"> 0 </div>
  </div>
  <div id="beings">
-  <input type="button" title="Acorn" style="background-image: url(image/acorn.png);  background-repeat: no-repeat; cursor:pointer; width: 73px; height:73px" onClick=preset("acorn");>
-  <input type="button" title="Glider" style="background-image: url(image/glider.png);  background-repeat: no-repeat; cursor:pointer; width: 73px; height:73px" onClick=preset("glider");>
-  <input type="button" title="R-pentomino" style="background-image: url(image/rpentomino.png);  background-repeat: no-repeat;cursor:pointer; width: 73px; height:73px" onClick=preset("r");>
+  <input type="button" title="Acorn" style="background-image: url(image/acorn.png);  background-repeat: no-repeat; cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("acorn");>
+  <input type="button" title="Glider" style="background-image: url(image/glider.png);  background-repeat: no-repeat; cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("glider");>
+  <input type="button" title="R-pentomino" style="background-image: url(image/rpentomino.png);  background-repeat: no-repeat;cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("r");>
  </div>
 <div class="manytext">
   <p>Game of life is a Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:</p>

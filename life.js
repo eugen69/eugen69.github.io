@@ -52,7 +52,11 @@ function multicolored() {
   }
  } else {
   rgbA[1]=rgbA[1]+250;
-  rgbA[0]=Math.floor(Math.random() * 200);
+  if (rgbA[0]>30&&rgbA[0]<200) {
+   rgbA[0]=rgbA[0]-(Math.floor(Math.random() *20));
+  } else  {
+   rgbA[0]=rgbA[0]+(Math.floor(Math.random() *20));
+   }
   }
  var hue = 'rgb(' + rgbA[0] + ',' + rgbA[1] + ',' + rgbA[2] + ')';
  liveColor = hue;
