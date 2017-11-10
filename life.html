@@ -33,7 +33,8 @@
      document.getElementById("sizeRange").value=25;
     }
    </script>
-  <div style="margin-bottom: 5px">Speed<input type="range" title="Speed" min="2" max="44" step="2" value="10" id="speedRange" oninput="changeSpeed();"></div>
+  <div style="margin-bottom: 10px">Speed<input type="range" title="Speed" min="2" max="44" step="2" value="10" id="speedRange" oninput="changeSpeed();">
+  </div>
   </div>
   
 <div id="divField" align="center">
@@ -50,10 +51,10 @@
   <input type="button" id="cleanButton" value="Clean" onClick="clean();">
    <div id="stepCounter" width="30px" style="display:inline; margin-left:35px"> 0 </div>
  </div>
- <div id="beings">
-  <input type="button" title="Acorn" style="background-image: url(image/acorn.png);  background-repeat: no-repeat; cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("acorn");>
-  <input type="button" title="Glider" style="background-image: url(image/glider.png);  background-repeat: no-repeat; cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("glider");>
-  <input type="button" title="R-pentomino" style="background-image: url(image/rpentomino.png);  background-repeat: no-repeat;cursor:pointer; margin:5px; width: 73px; height:73px" onClick=preset("r");>
+ <div>
+  <input type="button" title="Acorn" class="btn btnAcorn" onClick=preset("acorn");>
+  <input type="button" title="Glider" class="btn btnGlider" onClick=preset("glider");>
+  <input type="button" title="R-pentomino" class="btn btnR" onClick=preset("r");>
  </div>
 <div class="manytext">
   <p>Game of life is a Conway's cellular automaton. This is a zero-player game. You fill the field only in a first step. At each step in time:</p>
