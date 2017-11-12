@@ -1,14 +1,15 @@
 body {
 text-align:center; 
-font-family: Verdana, serif; 
+font-family: Arial, serif; 
 font-size:14px;
 }
 
-h1 {
+h1 {font-family: Arial, serif; 
 font: 22px lighter;
 }
 
-h2 {font: 18px lighter; 
+h2 {font-family: Arial, serif;
+font: 18px lighter; 
 }
 
 a:hover {
@@ -16,10 +17,12 @@ text-decoration:none;
 }
 
 a {
+ font-family: Arial, serif; 
 line-height: 1.3; 
 margin-left:10px;
 margin-right:10px ; 
-font-size:18px; 
+font-size:18px;
+color:#06881e;
  }
 
 img { 
@@ -32,11 +35,20 @@ p{
   margin-bottom: 0px;
   text-indent: 30px;
 }
+.main-menu {
+ font-size: 18px;  
+ margin: 0;
+    padding: 10px 15px;
+    list-style: none;
+}
 
-.navigation {
-font-size: 18px;  
-clear:both; 
-padding: 5px;
+.main-menu li {
+    margin-right:15px;
+    display:inline;
+}
+
+.main-menu a {
+    color: #06661e;
 }
 
 .input-button{  
