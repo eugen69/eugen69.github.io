@@ -4,25 +4,33 @@ font-family: Arial, serif;
 font-size:14px;
 }
 
-h1 {font-family: Arial, serif; 
+h1 {
+font-family: Arial, sans-serif; 
 font: 22px lighter;
 }
 
-h2 {font-family: Arial, serif;
+h2 {
+ font-family: Arial, sans-serif;
 font: 18px lighter; 
 }
 
-a:hover {
-text-decoration:none;
-}
-
 a {
- font-family: Arial, serif; 
+font-family: Arial, serif; 
 line-height: 1.3; 
-margin-left:10px;
-margin-right:10px ; 
 font-size:18px;
 color:#06881e;
+display:inline-block;
+text-decoration:none;
+padding:10px 7px;
+margin:3px;
+ }
+ 
+ a:hover {
+text-decoration:none;
+background-color: #d4ffce;
+}
+a:active{
+  border: none;
  }
 
 img { 
@@ -45,6 +53,8 @@ p{
 .main-menu li {
     margin-right:15px;
     display:inline;
+    white-space: nowrap;
+    margin-right:-5px;
 }
 
 .main-menu a {
