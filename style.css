@@ -1,0 +1,98 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: monospace;
+}
+ul {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+li {
+    display: inline-block;
+    margin-right: -8px;
+    vertical-align: middle;
+}
+a {
+    display: block;
+    text-decoration: none;
+}
+.projects, .projects a {
+    margin: 8px;
+}
+.projects img {
+    display: block;
+    border: 2px solid black;
+    height: 64px;
+    padding: 8px;
+    border-radius: 16px;
+}
+.projects a:link img {
+    background: #FFFFFF;
+}
+.projects a:visited img {
+    background: #F0F0F0;
+}
+.projects a:hover img {
+    box-shadow: 0 0 64px #222222;
+    outline: none;
+}
+.projects a:active img {
+    border: 4px solid black;
+    padding: 6px;
+}
+.contacts {
+    background: #F0F0F0;
+}
+.contacts a {
+    margin: 16px;
+}
+.contacts img {
+    display: block;
+    height: 32px;
+}
+.github a:link img {
+    opacity: 1;    
+}
+.github a:visited img {
+    opacity: 0.9;
+}
+.github a:hover img {
+    opacity: 0.6;
+}
+.github a:active img {
+    opacity: 0.3;
+}
+.mail a:link {
+    color: #000000;
+}
+.mail a:visited {
+    color: #222222;
+}
+.mail a:hover {
+    color: #555555;
+}
+.mail a:active {
+    color: #777777;
+}
+
+@media only screen and (min-width: 480px) {
+    .projects, .projects a {
+        margin: 16px;
+    }
+    .projects img {
+        height: 96px;
+    }
+}
+ 
+@media only screen and (min-width: 800px) {
+    .projects, .projects a {
+        margin: 32px;
+    }
+    .contacts {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+    }
+}
