@@ -85,7 +85,7 @@ a {
     }
 }
  
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 802px) {
     .projects, .projects a {
         margin: 32px;
     }
