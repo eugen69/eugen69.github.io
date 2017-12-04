@@ -36,7 +36,6 @@
             }  
          var msPERdegree = Math.floor(monthLength / 360);
          var angle = Math.floor(time / msPERdegree);
-         alert('time: '+time);
          var elem = document.getElementById("indicator-container");
          elem.style.webkitTransform = 'rotate(' + angle + 'deg)';
          elem.style.transform = 'rotate(' + angle + 'deg)';  
