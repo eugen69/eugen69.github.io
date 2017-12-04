@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <meta charset="utf-8">
+       <title>Moonclock</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+       <link rel="stylesheet" href="assets/style.css" type="text/css">
+    </head>
+   <body>
+      <div class="moonclock">
+         <div id="indicator-container">
+            <div class="indicator">
+            </div>
+            <div class="pin"></div>
+         </div>
+      </div>
+      <script>
+         var date = new Date;
+         var currentMs = date.getTime();
+         var fullMoonsArray = [1507203600000, 1509747780000, 1512287220000, 1514831040000,  1517376420000, 1519923060000, 1522474620000, 1525024680000, 1527578400000, 1530136380000, 1532697600000, 1535259360000, 1537818720000, 1540374300000, 1542922740000, 1545472200000];//Oct 05, 2017 - dec 22, 2018
+         var l=fullMoonsArray.length;
+         var time, monthLength;
+         if (currentMs>fullMoonsArray[1]&&currentMs<fullMoonsArray[l-1]) {
+            for (var i = 0; i < fullMoonsArray.length; i++) {
+            if (currentMs < fullMoonsArray[i]) {
+               time = currentMs - fullMoonsArray[i-1];
+               monthLength = fullMoonsArray[i] - fullMoonsArray[i - 1];
+               break;
+            } 
+            } //oneMonthMs = 2551442976;
+            var msPERdegree = Math.floor(monthLength / 360);
+            var angle = Math.floor(time / msPERdegree);   
+            var elem = document.getElementById("indicator-container");
+            elem.style.webkitTransform = 'rotate(' + angle + 'deg)';
+            elem.style.transform = 'rotate(' + angle + 'deg)';  
+         } else {
+            alert ('Developer, go to Griffith Observatory to update Full Moon database!');
+         }
+      </script>
+   </body>
+</html>

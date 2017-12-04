@@ -1,0 +1,34 @@
+.moonclock {
+   width:15em;
+   height:15em;
+   border-radius: 50%;
+   background:rgba(72, 209, 204, 0.2) url(/assets/clockface.svg) no-repeat;
+   position: relative;
+}
+#indicator-container {
+   position: absolute;
+   top: 0;
+   right: 0;
+   bottom: 0;
+   left: 0;
+   transform: rotate(67deg);
+}
+.indicator {
+   background: #32aca7;
+   height: 48%;
+   left: 49%;
+   position: absolute;
+   top: 11%;
+   transform-origin: 50% 100%;
+   width: 3%;  
+}
+.pin {
+   position: absolute;
+   border-radius: 50%;
+   width:5%;
+   height:5%;
+   background: #00aca7;
+   top:49%;
+   left:48%;
+   z-index:10;
+}
