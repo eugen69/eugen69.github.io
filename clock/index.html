@@ -26,13 +26,13 @@
                time = currentMs - fullMoonsArray[i-1];
                monthLength = fullMoonsArray[i] - fullMoonsArray[i - 1];
                break;
-            } 
+            }
             } //oneMonthMs = 2551442976;
             var msPERdegree = Math.floor(monthLength / 360);
-            var angle = Math.floor(time / msPERdegree);   
+            var angle = Math.floor(time / msPERdegree);
             var elem = document.getElementById("indicator-container");
             elem.style.webkitTransform = 'rotate(' + angle + 'deg)';
-            elem.style.transform = 'rotate(' + angle + 'deg)';  
+            elem.style.transform = 'rotate(' + angle + 'deg)';
          } else {
             alert ('Developer, go to Griffith Observatory to update Full Moon database!');
          }

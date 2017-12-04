@@ -17,7 +17,7 @@ li {
 }
 a {
     display: block;
-    margin: 8px;
+    margin: 8px 8px 5px 8px;
     outline: 0;
 }
 img {
@@ -26,8 +26,6 @@ img {
     width: 64px;
     padding: 8px;
     border-radius: 16px;
-}
-a:link img {
     background: #FFFFFF;
 }
 a:visited img {
@@ -42,8 +40,11 @@ a:active img {
 }
 
 @media only screen and (min-width: 480px) {
-    ul, a {
+    ul {
         margin: 16px;
+    }
+    a {
+        margin: 16px 16px 13px 16px;
     }
     img {
         height: 96px;
@@ -52,7 +53,10 @@ a:active img {
 }
  
 @media only screen and (min-width: 800px) {
-    ul, a {
+    ul {
         margin: 32px;
+    }
+    a {
+        margin: 32px 32px 29px 32px;
     }
 }

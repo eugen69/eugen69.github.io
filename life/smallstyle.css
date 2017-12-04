@@ -94,11 +94,11 @@ background-color: #c3ffbd;}
  margin:4px;
 }
 .btnAcorn{
- background-image:url("image/acorn.png");
+ background-image:url("assets/acorn.png");
  }
  .btnGlider{
- background-image: url("image/glider.png"); 
+ background-image: url("assets/glider.png");
  }
  .btnR{
-  background-image: url("image/rpentomino.png");
+  background-image: url("assets/rpentomino.png");
 }

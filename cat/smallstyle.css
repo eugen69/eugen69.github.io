@@ -1,29 +1,29 @@
  body {
-text-align:center; 
-font-family: Arial, serif; 
+text-align:center;
+font-family: Arial, serif;
 font-size:14px;
 }
 
 h1 {
- font-family: Arial, serif; 
+ font-family: Arial, serif;
 font: 18px lighter;
 }
 
 h2 {
- font-family: Arial, serif; 
+ font-family: Arial, serif;
  font: 16px lighter;
  min-width: 320px;
 }
 
 a {
  display:inline-block;
- font-family: Arial, serif; 
- font-size: 16px; 
+ font-family: Arial, serif;
+ font-size: 16px;
  line-height: 1.3;
  color:#06881e;
  padding:7px 2px;
  }
- 
+
  a:hover {
   text-decoration:none;
    background-color: #d4ffce;
@@ -35,7 +35,7 @@ a {
 img {
  clear:both;
  width:30%;
- height:30%; 
+ height:30%;
 max-width:120px; max-height:120px;
 min-width:50px; min-height:50px;}
 
@@ -45,7 +45,7 @@ p{
 }
 
 .main-menu {
- font-size: 16px;  
+ font-size: 16px;
  margin: 0;
     padding: 5px 0;
     list-style: none;
@@ -64,7 +64,7 @@ p{
     text-align: center;
 border:1px solid transparent;
 -webkit-border-radius:  5px; /* Safari 4 */
-border-radius:  10px; 
+border-radius:  10px;
 margin:0px auto;
 padding:10px;
 cursor:pointer;
@@ -97,7 +97,7 @@ background-color: #c3ffbd;}
  background-image:url("image/acorn.png");
  }
  .btnGlider{
- background-image: url("image/glider.png"); 
+ background-image: url("image/glider.png");
  }
  .btnR{
   background-image: url("image/rpentomino.png");

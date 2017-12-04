@@ -1,5 +1,5 @@
 var wGlob, hGlob, timerId, colorTimerId;
-var fieldArray=[];
+var fieldArray = [];
 var millisecond=1000;
 var cellSize=8;
 var liveColor="rgb(9, 171, 63)";
