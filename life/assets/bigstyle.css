@@ -1,29 +1,29 @@
 body {
-text-align:center; 
-font-family: Arial, serif; 
+text-align:center;
+font-family: Arial, serif;
 font-size:14px;
 }
 
 h1 {
-font-family: Arial, sans-serif; 
+font-family: Arial, sans-serif;
 font: 22px lighter;
 }
 
 h2 {
  font-family: Arial, sans-serif;
-font: 18px lighter; 
+font: 18px lighter;
 }
 
 a {
-font-family: Arial, serif; 
-line-height: 1.3; 
+font-family: Arial, serif;
+line-height: 1.3;
 font-size:18px;
 color:#06881e;
 display:inline-block;
 padding:10px 7px;
 margin:3px;
  }
- 
+
  a:hover {
   text-decoration:none;
 background-color: #d4ffce;
@@ -32,8 +32,8 @@ a:active{
   border: none;
  }
 
-img { 
-clear:both; 
+img {
+clear:both;
 width:120px;
 height:120px;}
 
@@ -43,7 +43,7 @@ p{
   text-indent: 30px;
 }
 .main-menu {
- font-size: 18px;  
+ font-size: 18px;
  margin: 0;
     padding: 10px 15px;
     list-style: none;
@@ -60,11 +60,11 @@ p{
     color: #06661e;
 }
 
-.input-button{  
+.input-button{
 text-align: center;
 border:1px solid transparent;
 -webkit-border-radius:  5px; /* Safari 4 */
-border-radius:  10px; 
+border-radius:  10px;
 margin:5px auto;
 padding:10px;
 cursor:pointer;
@@ -73,7 +73,7 @@ background-color: #c3ffbd;
 
 .manytext{
     text-align:justify;
-    margin-left: 25%; 
+    margin-left: 25%;
     margin-right: 25%;
     padding:25px;
     }
@@ -94,11 +94,11 @@ background-color: #c3ffbd;
  margin:4px;
 }
 .btnAcorn{
- background-image:url("image/acorn.png");
+ background-image:url("acorn.png");
  }
  .btnGlider{
- background-image: url("image/glider.png"); 
+ background-image: url("glider.png");
  }
  .btnR{
-  background-image: url("image/rpentomino.png");
+  background-image: url("rpentomino.png");
   }

@@ -79,7 +79,7 @@ function displayEmptyTable(width, height) {
             cell.height=cellSize;
             cell.id="".concat(j,' ',i);//x y
             cell.style.backgroundColor=deadColor;
-        }     
+        }
     }
 document.getElementById("divField").appendChild(emptyTable);
 }
@@ -139,7 +139,7 @@ function preset(name){
    }  else if (name=="r") {
     printPreset(r,h);
     }
- 
+
 }
 
 function printPreset(array, place){
@@ -207,12 +207,12 @@ function isLiveNextG(){
  for (i=0; i < document.getElementById("currentTab").rows.length; i++) {
   for (j=0; j < document.getElementById("currentTab").rows[i].cells.length; j++) {
    if (document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor!=deadColor) {
-	 return true;	 } 	 
+	 return true;	 }
 	 }
 	 }
   return false;
 	 }
-   
+
 function paintNextGFromArrayToTable(difference) {
   var left=Math.floor(difference/2);
   var right=difference-left;
@@ -230,7 +230,7 @@ function paintNextGFromArrayToTable(difference) {
               document.getElementById("currentTab").rows[i].cells[j].style.backgroundColor=deadColor;
              }
            }
-       }       
+       }
 }
 
 function makeNextG() {
@@ -256,7 +256,7 @@ function makeNextG() {
         newField=null;
         return isEqualSteps;
  }
- 
+
  function compare(array1,array2){
   if (array1.length==array2.length){
    for (h = 0; h < hGlob; h++) {
