@@ -2,7 +2,7 @@
    width:15em;
    height:15em;
    border-radius: 50%;
-   background:rgba(72, 209, 204, 0.2) url(/assets/clockface.svg) no-repeat;
+   background: rgba(72, 209, 204, 0.2) url(assets/clockface.svg) no-repeat;
    position: relative;
 }
 #indicator-container {
