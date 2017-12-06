@@ -1,0 +1,95 @@
+html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+.column1 {
+    float: left;
+    width: 100%;
+    background: #E0F90A;
+}
+.column1 p {
+    margin: 16px;
+    line-height: 32px;
+}
+.column2 {
+    float: left;
+    width: 100%;
+}
+.column2 p {
+    margin: 16px;
+}
+.column2 img {
+    display: block;
+    margin: 16px auto;
+    width: 80%;
+    max-width: 480px;
+}
+.column3 {
+    float: left;
+    width: 100%;
+    background: #000000;
+}
+.column3 div {
+    margin: 16px;
+}
+a {
+    text-decoration: none;
+    outline: 0;
+}
+a:link {
+    color: #E0F90A;
+}
+a:visited {
+    color: #666666;
+}
+a:hover {
+    color: #CCCCCC;
+}
+a:active {
+    color: #FFFFFF;
+}
+
+@media only screen and (min-width: 480px) {
+    .clearfix {
+        background: #E0F90A;
+    }
+    .column1 {
+        width: 30%;
+    }
+    .column2 {
+        width: 70%;
+        background: #FFFFFF;
+    }
+    .clearfix::after {
+        content: "";
+        clear: both;
+        display: table;
+    }
+}
+
+@media only screen and (min-width: 800px) {
+    .column1 {
+        width: 25%;
+    }
+    .column1 p {
+        margin: 14%;
+        line-height: 2em;
+    }
+    .column2 p {
+        margin: 2% 7%;
+    }
+    .column2 {
+        width: 50%;
+    }
+    .column3 {
+        width: 25%;
+        background: #E0F90A;;
+    }
+    .column3 div {
+        margin: 14%;
+    }
+    a:link {
+        color: #000000;
+    }
+}
