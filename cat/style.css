@@ -4,15 +4,12 @@ html, body {
     font-family: sans-serif;
 }
 .header {
-    height: 4em;
     line-height: 4em;
-    margin: 0px;
     background: #000000;
 }
 .header h1 {
     margin: 0px;
     text-align: center;
-    vertical-align: middle;
     color: #E0F90A;
 }
 .column1 {
@@ -42,24 +39,25 @@ html, body {
     width: 100%;
     background: #000000;
 }
-.column3 div {
+.column3 p {
     margin: 16px;
+    color: #E0F90A;
 }
 a {
     text-decoration: none;
     outline: 0;
 }
 a:link {
-    color: #E0F90A;
+    color: #FFFFFF;
 }
 a:visited {
-    color: #666666;
+    color: #444444;
 }
 a:hover {
-    color: #CCCCCC;
+    color: #959595;
 }
 a:active {
-    color: #FFFFFF;
+    color: #E0F90A;
 }
 
 @media only screen and (min-width: 480px) {
@@ -96,12 +94,22 @@ a:active {
     }
     .column3 {
         width: 25%;
-        background: #E0F90A;;
+        background: #E0F90A;
     }
-    .column3 div {
+    .column3 p {
         margin: 14%;
+        color: #000000;
     }
     a:link {
+        color: #444444;
+    }
+    a:visited {
+        color: #FFFFFF;
+    }
+    a:hover {
+        color: #959595;
+    }
+    a:active {
         color: #000000;
     }
 }
